@@ -123,10 +123,11 @@
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@@@@%%%@@@@@@@@@%%@%%%%%%@%%%
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         </pre>
-        <h1 class="blink">> Hi, I'm a <span class="animate"></span></h1>
-        <p class="student" id="student">
-          Passionate about crafting modern web experiences.
-        </p>
+        <div class="hero-text">
+          <h1 class="blink">> Hi, I'm <span class="animate"></span></h1>
+        </div>
+        <p>Passionate about crafting modern web experiences.</p>
+
         <div class="hero-btns">
           <a href="#about" class="button">About me</a>
           <a href="#skills" class="button">Skills</a>
@@ -177,7 +178,7 @@
     <main>
       <!-- ABOUT ME -->
       <section id="about">
-        <div class="container-about">
+        <div class="container">
           <div class="about-me" id="about-me">
             <h2 class="blink"><span>About</span> Me</h2>
             <p>
@@ -197,9 +198,9 @@
       </section>
 
       <section id="skills">
-        <div class="container-skills">
+        <div class="container">
           <div class="skills" id="skills">
-            <h2><span>Skills</span></h2>
+            <h2 class="blink"><span>Skills</span></h2>
             <p>
               Nullam sagittis leo vel mollis varius. Maecenas condimentum, nibh
               non iaculis facilisis, ante metus vulputate nisl, mattis
@@ -223,15 +224,41 @@
       </section>
 
       <section id="projects">
-        <div class="container-about">
+        <div class="container">
           <div class="projects" id="projects">
-            <h2><span>Projects</span></h2>
+            <h2 class="blink"><span>Projects</span></h2>
             <ul class="projects-list">
               <li>
-                <button class="button" id="project1-btn">Project One</button>
+                <button class="button" id="project1-btn">
+                  Mini Message Board
+                </button>
               </li>
               <li>
-                <button class="button" id="project2-btn">Project Two</button>
+                <button class="button" id="project2-btn">Duodedra</button>
+              </li>
+              <li>
+                <button class="button" id="project3-btn">PetPlus Store</button>
+              </li>
+              <li>
+                <button class="button" id="project4-btn">Coming Soon</button>
+              </li>
+              <li>
+                <button class="button" id="project5-btn">Coming Soon</button>
+              </li>
+              <li>
+                <button class="button" id="project6-btn">Coming Soon</button>
+              </li>
+              <li>
+                <button class="button" id="project7-btn">Coming Soon</button>
+              </li>
+              <li>
+                <button class="button" id="project8-btn">Coming Soon</button>
+              </li>
+              <li>
+                <button class="button" id="project9-btn">Coming Soon</button>
+              </li>
+              <li>
+                <button class="button" id="project10-btn">Coming Soon</button>
               </li>
             </ul>
           </div>
@@ -239,12 +266,13 @@
       </section>
 
       <div class="hidden">
+        <!-- PROJECT ONE - MINI MESSAGE BOARD-->
         <div class="project-box" id="project1-content">
           <h1>Mini Message Board</h1>
           <img src="imgs/minimessage.png" width="600px" />
           <p>
-            Here is some text for the first project describing what it is, what
-            it does and technology used
+            A mini public message board hosted with Koyeb and developed using
+            PostgreSQL, Node.JS and Express.
           </p>
           <br />
           <div class="technologies">
@@ -255,49 +283,283 @@
                 <span
                   class="iconify"
                   data-icon="simple-icons:postgresql"
+                  title="PostgreSQL"
                 ></span>
               </li>
               <li>
-                <span class="iconify" data-icon="simple-icons:nodedotjs"></span>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:nodedotjs"
+                  title="Node.js"
+                ></span>
               </li>
               <li>
-                <span class="iconify" data-icon="simple-icons:react"></span>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:express"
+                  title="Express.js"
+                ></span>
               </li>
               <li>
                 <span
                   class="iconify"
                   data-icon="simple-icons:javascript"
+                  title="JavaScript"
                 ></span>
               </li>
               <li>
-                <span class="iconify" data-icon="simple-icons:html5"></span>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:html5"
+                  title="HTML5"
+                  aria-label="HTML5"
+                ></span>
               </li>
               <li>
-                <span class="iconify" data-icon="simple-icons:css3"></span>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:css3"
+                  title="CSS3"
+                ></span>
               </li>
               <li>
-                <span class="iconify" data-icon="simple-icons:github"></span>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:github"
+                  title="Git"
+                ></span>
               </li>
             </ul>
           </div>
           <br />
-          <ul class="projects-list">
+          <ul class="projects-external-links">
             <li>
-              <button class="button" id="project1-btn">
-                <i class="fi-xwsuxl-external-link-solid"></i>Live Demo
-              </button>
+              <a
+                href="https://yappiest-macaw-kim3n-00c20922.koyeb.app/"
+                target="_blank"
+                rel="noopener"
+              >
+                <button class="button">
+                  <i class="fi-xwsuxl-external-link-solid"></i>Live Demo
+                </button>
+              </a>
             </li>
             <li>
-              <button class="button" id="project2-btn">
-                <i class="fi-snsuxl-github-alt"></i> View Source
-              </button>
+              <a
+                href="https://github.com/Kim3n/MiniMessageBoard"
+                target="_blank"
+                rel="noopener"
+              >
+                <button class="button">
+                  <i class="fi-snsuxl-github-alt"></i> View Source
+                </button>
+              </a>
             </li>
           </ul>
         </div>
+        <!-- PROJECT TWO - DUODEDRA-->
         <div class="project-box" id="project2-content">
-          <h1>Project 2</h1>
-          <p>Here is some text for this second project</p>
+          <h1>Duodedra</h1>
+          <p>
+            A Duolingo-style web app designed to help you learn and practice the
+            Daedric alphabet from The Elder Scrolls series in a fun, interactive
+            way. Hosted with northflank.
+          </p>
+          <div class="technologies">
+            <h3>Technologies used:</h3>
+
+            <ul class="technologies-list">
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:postgresql"
+                  title="PostgreSQL"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:nodedotjs"
+                  title="Node.js"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:express"
+                  title="Express.js"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:javascript"
+                  title="JavaScript"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:html5"
+                  title="HTML5"
+                  aria-label="HTML5"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:css3"
+                  title="CSS3"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:github"
+                  title="Git"
+                ></span>
+              </li>
+            </ul>
+          </div>
+          <br />
+          <ul class="projects-external-links">
+            <li>
+              <a
+                href="https://baconwastaken.tech/"
+                target="_blank"
+                rel="noopener"
+              >
+                <button class="button">
+                  <i class="fi-xwsuxl-external-link-solid"></i>Live Demo
+                </button>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Kim3n/Duodedra"
+                target="_blank"
+                rel="noopener"
+              >
+                <button class="button">
+                  <i class="fi-snsuxl-github-alt"></i> View Source
+                </button>
+              </a>
+            </li>
+          </ul>
         </div>
+        <!-- PROJECT THREE - DUODEDRA-->
+        <div class="project-box" id="project3-content">
+          <h1>PetPlus Store</h1>
+          <p>
+            In this project, we created a fictional webstore, developing both
+            the frontend and backend. We used MySQL, Java with Spring Boot and
+            Thymeleaf for the backend, while the frontend was built using HTML,
+            CSS, and JavaScript.
+          </p>
+          <p>
+            MySQL database is hosted on Aiven, and the application is
+            containerized using Docker. The backend is deployed on Render,
+            pulling the Docker image from Docker Hub. Since it runs on Render’s
+            free tier, it may take a few seconds to wake up if inactive and
+            might be slow
+          </p>
+          <div class="technologies">
+            <h3>Technologies used:</h3>
+            <ul class="technologies-list">
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:mysql"
+                  title="MySQL"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="devicon-plain:java"
+                  title="Java"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:springboot"
+                  title="Spring Boot"
+                ></span>
+              </li>
+
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:thymeleaf"
+                  title="Thymeleaf"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:css3"
+                  title="CSS3"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:html5"
+                  title="HTML5"
+                  aria-label="HTML5"
+                ></span>
+              </li>
+
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:javascript"
+                  title="JavaScript"
+                ></span>
+              </li>
+              <li>
+                <span
+                  class="iconify"
+                  data-icon="simple-icons:github"
+                  title="Git"
+                ></span>
+              </li>
+            </ul>
+          </div>
+          <br />
+          <ul class="projects-external-links">
+            <li>
+              <a
+                href="https://petplus-latest.onrender.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <button class="button">
+                  <i class="fi-xwsuxl-external-link-solid"></i>Live Demo
+                </button>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/siribsandnes/petPlusProject"
+                target="_blank"
+                rel="noopener"
+              >
+                <button class="button">
+                  <i class="fi-snsuxl-github-alt"></i> View Source
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="project-box" id="project4-content"></div>
+        <div class="project-box" id="project5-content"></div>
+        <div class="project-box" id="project6-content"></div>
+        <div class="project-box" id="project7-content"></div>
+        <div class="project-box" id="project8-content"></div>
+        <div class="project-box" id="project9-content"></div>
+        <div class="project-box" id="project10-content"></div>
       </div>
     </main>
   </body>

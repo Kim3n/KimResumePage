@@ -10,6 +10,24 @@
   font-size: clamp(18px, 3vw, 30px);
 }
 
+.hero-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  min-height: 130px;
+}
+
+.hero-text h1 {
+  margin: 0;
+}
+
+.hero-text .animate {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -76,6 +94,7 @@ section {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  text-align: center;
 }
 
 .hero-btns {
@@ -148,6 +167,8 @@ button {
 }
 
 .button:hover {
+  animation: blink 3s infinite;
+  text-shadow: 0 0 0.5rem;
   transform: scale(1.2);
   color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
@@ -177,9 +198,28 @@ li {
   color: var(--primary-color);
 }
 
+.about-me,
+.projects,
+.skills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .projects-list {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projects-list button {
+  max-width: 200px;
+  min-width: 200px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .link:hover {
@@ -206,6 +246,7 @@ li {
 
 .socials li:hover {
   transform: scale(1.5);
+  text-shadow: 0 0 0.5rem;
 }
 
 .links li:hover {
@@ -214,5 +255,16 @@ li {
 
 .socials a:hover {
   background: none;
+  animation: blink 1.5s infinite;
   color: var(--secondary-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 80%;
 }
