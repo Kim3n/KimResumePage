@@ -34,12 +34,13 @@ function debounce(func, timeout = 100) {
 function calculateDimensions() {
   const isMobile = window.innerWidth <= 768;
   return {
-    width: isMobile ? window.innerWidth * 0.9 : window.innerWidth * 0.6,
-    height: isMobile ? window.innerHeight * 0.8 : window.innerHeight * 0.7,
+    width: isMobile ? window.innerWidth * 0.9 : window.innerWidth * 0.5,
+    height: isMobile ? window.innerHeight * 0.8 : window.innerHeight * 0.5,
     isMobile,
   };
 }
 
+// Function to calculate the position of the window based on its index
 function getWindowPosition(index, winbox, isMobile) {
   if (isMobile) return { x: "center", y: "center" };
 
@@ -111,13 +112,11 @@ const handleResize = debounce(() => {
     // Update window size
     winbox.resize(dimensions.width, dimensions.height);
 
-    // Update position
-    const position = getWindowPosition(index, winbox, dimensions.isMobile);
-    winbox.move(position.x, position.y);
+    // // Update position
+    // const position = getWindowPosition(index, winbox, dimensions.isMobile);
+    // winbox.move(position.x, position.y);
   });
 });
-
-window.addEventListener("resize", handleResize);
 
 window.addEventListener("resize", handleResize);
 
@@ -133,7 +132,7 @@ document.querySelector("#project3-btn").addEventListener("click", () => {
   openProjectWindow("project3-content", "Petplus Store");
 });
 document.querySelector("#project4-btn").addEventListener("click", () => {
-  openProjectWindow("project4-content", "Portfolio");
+  openProjectWindow("project4-content", "User Manuals App");
 });
 document.querySelector("#project5-btn").addEventListener("click", () => {
   openProjectWindow("project5-content", "Portfolio");
@@ -146,10 +145,4 @@ document.querySelector("#project7-btn").addEventListener("click", () => {
 });
 document.querySelector("#project8-btn").addEventListener("click", () => {
   openProjectWindow("project8-content", "Portfolio");
-});
-document.querySelector("#project9-btn").addEventListener("click", () => {
-  openProjectWindow("project9-content", "Portfolio");
-});
-document.querySelector("#project10-btn").addEventListener("click", () => {
-  openProjectWindow("project10-content", "Portfolio");
 });
