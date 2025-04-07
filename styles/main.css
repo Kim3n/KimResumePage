@@ -396,7 +396,7 @@ section {
   background-color: var(--primary-color);
   color: var(--background-color);
   border: none;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
   display: none; /* Hidden by default */
