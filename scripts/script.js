@@ -155,6 +155,7 @@ let isMaskOn = true;
 const body = document.body;
 const localStorageTheme = localStorage.getItem("theme");
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+const lightModeWarning = document.querySelector("#lightModeWarning");
 
 function calculateSettingAsThemeString({
   localStorageTheme,
@@ -204,6 +205,12 @@ buttonBrightness.addEventListener("click", (event) => {
   updateBrightnessButton({ isDark: newTheme === "dark" });
   updateThemeOnHtmlEl({ theme: newTheme });
   currentThemeSetting = newTheme;
+  if (currentThemeSetting === "light") {
+    lightModeWarning.style.display = "block";
+    setTimeout(() => {
+      lightModeWarning.style.display = "none";
+    }, 3000);
+  }
 });
 
 buttonMask.addEventListener("click", (event) => {
