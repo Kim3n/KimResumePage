@@ -212,3 +212,27 @@ buttonMask.addEventListener("click", (event) => {
   body.classList.toggle("no-mask");
   isMaskOn = !isMaskOn;
 });
+
+//SCROLL TO TOP BUTTON
+const scrollToTopButton = document.querySelector("#scrollToTopBtn");
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+scrollToTopButton.addEventListener("click", scrollToTop);
+
+// Show or hide the button based on scroll position
+const toggleScrollToTopButton = () => {
+  if (
+    document.body.scrollTop > 600 ||
+    document.documentElement.scrollTop > 600
+  ) {
+    scrollToTopButton.style.display = "block";
+  } else {
+    scrollToTopButton.style.display = "none";
+  }
+};
+
+window.onscroll = toggleScrollToTopButton;
