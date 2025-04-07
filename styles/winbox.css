@@ -10,6 +10,30 @@
   --dark-background-color: #404040;
 }
 
+[data-theme="light"] {
+  --primary-color: black;
+  --secondary-color: black;
+  --tertiary-color: #404040;
+  --background-color: white;
+  --dark-background-color: #404040;
+}
+
+[data-theme="dark"] {
+  --primary-color: #00b015;
+  --secondary-color: #00ee00;
+  --tertiary-color: #005f00;
+  --background-color: #111;
+  --dark-background-color: #404040;
+}
+
+[data-theme="new-vegas"] {
+  --primary-color: #ffd52c;
+  --secondary-color: #ff5c00;
+  --tertiary-color: #bd4906;
+  --background-color: #111;
+  --dark-background-color: #404040;
+}
+
 /* WinBox window styles */
 .winbox {
   background: var(--tertiary-color);

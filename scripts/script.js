@@ -1,3 +1,6 @@
+const getComputedStyleValue = (property) =>
+  getComputedStyle(document.documentElement).getPropertyValue(property).trim();
+
 // Typing effect with typed.js
 const typed = new Typed(".animate", {
   strings: [
@@ -88,15 +91,12 @@ function openProjectWindow(projectId, title) {
       delete windows[projectId];
     },
     onfocus: function () {
-      // Change to focused color
-      this.setBackground("#00b015");
+      this.setBackground(getComputedStyleValue("--primary-color"));
     },
     onblur: function () {
-      // Revert to default color
-      this.setBackground("#005f00");
+      this.setBackground(getComputedStyleValue("--tertiary-color"));
     },
   });
-
   const position = getWindowPosition(index, winbox, dimensions.isMobile);
   winbox.move(position.x, position.y);
 
@@ -145,4 +145,70 @@ document.querySelector("#project7-btn").addEventListener("click", () => {
 });
 document.querySelector("#project8-btn").addEventListener("click", () => {
   openProjectWindow("project8-content", "Portfolio");
+});
+
+// Theme and Mask toggle functionality
+
+const buttonBrightness = document.querySelector("[data-theme-toggle]");
+const buttonMask = document.querySelector("[data-mask-toggle]");
+let isMaskOn = true;
+const body = document.body;
+const localStorageTheme = localStorage.getItem("theme");
+const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function calculateSettingAsThemeString({
+  localStorageTheme,
+  systemSettingDark,
+}) {
+  if (localStorageTheme !== null) {
+    return localStorageTheme;
+  }
+  if (systemSettingDark.matches) {
+    return "dark";
+  }
+  return "light";
+}
+
+function updateBrightnessButton({ isDark }) {
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+  sunIcon.style.display = isDark ? "block" : "none";
+  moonIcon.style.display = isDark ? "none" : "block";
+}
+
+function updateMaskButton({ isMaskOn }) {
+  const maskOnIcon = document.getElementById("mask-on-icon");
+  const maskOffIcon = document.getElementById("mask-off-icon");
+  maskOnIcon.style.display = isMaskOn ? "block" : "none";
+  maskOffIcon.style.display = isMaskOn ? "none" : "block";
+}
+
+function updateThemeOnHtmlEl({ theme }) {
+  document.querySelector("html").setAttribute("data-theme", theme);
+}
+
+let currentThemeSetting = calculateSettingAsThemeString({
+  localStorageTheme,
+  systemSettingDark,
+});
+
+updateBrightnessButton({
+  buttonEl: buttonBrightness,
+  isDark: currentThemeSetting === "dark",
+});
+updateThemeOnHtmlEl({ theme: currentThemeSetting });
+
+buttonBrightness.addEventListener("click", (event) => {
+  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", newTheme);
+  updateBrightnessButton({ isDark: newTheme === "dark" });
+  updateThemeOnHtmlEl({ theme: newTheme });
+  currentThemeSetting = newTheme;
+});
+
+buttonMask.addEventListener("click", (event) => {
+  updateMaskButton({ isMaskOn });
+
+  body.classList.toggle("no-mask");
+  isMaskOn = !isMaskOn;
 });
